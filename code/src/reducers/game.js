@@ -27,7 +27,7 @@ export const generateGame = () => {
   return (dispatch, getState) => {
     dispatch(ui.actions.setLoading(true))
 
-    fetch(`https://labyrinth-technigo.herokuapp.com/start`, {
+    fetch(`https://labyrinth.technigo.io/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: `${getState().game.username}` }),
@@ -44,7 +44,7 @@ export const continueGame = (type, direction) => {
   return (dispatch, getState) => {
     dispatch(ui.actions.setLoading(true))
 
-    fetch(`https://labyrinth-technigo.herokuapp.com/action`, {
+    fetch(`https://labyrinth.technigo.io/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
